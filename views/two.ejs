@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+<body class="bg-info">
+    <div class="container container-fluid">
+        <div class="card border-0 bg-info">
+            <h1 class="text-center">Рецепт Приготовление <%= data.name %></h1> 
+            <a href="/" class="nav-link">&larr; Назад к списку рецептов</a>
+            <img src="<%= data.image %>" class="img-fluid" alt="image">
+
+            <p class="text-center"><span class="fs-3">Нужно:</span> <%= data.whatYouNeed %></p>
+
+            <ul class="list-unstyled">
+                <li class="fs-2">Рецепт: </li>
+                <% data.howToDo.split("Шаг").forEach((el,i)=>{ %>
+                    <li><%= el %></li>
+                <% }) %> %>
+            </ul>
+
+        </div>
+    </div>
+</body>
+</html>

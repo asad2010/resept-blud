@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit resept</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+<body>
+    <section>
+        <div class="container container-fluid">
+            <h1 class="text-center">Edit Resept <%= filteredData[0].name %></h1>
+            <form action="/admin/edit/<%= filteredData[0].id %>" method="post" class="d-flex   flex-column justify-content-center gap-3 align-items-center">
+                <input type="text" name="image" placeholder="src" value="<%= filteredData[0].image %>">
+                <input type="text" name="name" placeholder="name" value="<%= filteredData[0].name %>">
+                <input type="text" name="type" placeholder="type" value="<%= filteredData[0].type %>">
+
+                <div class="d-flex gap-3">
+                    <textarea name="whatYouNeed" cols="50" rows="10" placeholder="whatYouNeed"><%= filteredData[0].whatYouNeed %></textarea>
+                    <textarea name="howToDo" id="howToDo" cols="50" rows="10" placeholder="howToDo"><%= filteredData[0].howToDo %></textarea>
+                </div>
+                <button type="sumbit">Sumbit</button>
+            </form>
+        </div>
+    </section>
+</body>
+</html>
