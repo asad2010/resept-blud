@@ -11,7 +11,7 @@ const controller = {
     adminAdd: async function(req,res){
         await Resepts.create({
             image: req.body.image,
-            type: req.body.type,
+            type: req.body.type.split(","),
             name:req.body.name,
             whatYouNeed:req.body.whatYouNeed ,
             howToDo: req.body.howToDo,
